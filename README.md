@@ -7,9 +7,11 @@ npm install zhuque
 ```
 
 ## Usage
+```bash
 npm install
 npm run build
 npm run start
+```
 
 ## In Progress
 1. security check
