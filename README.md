@@ -1,10 +1,5 @@
 ## Introduction
 Dashboard to show error and performance log integrated with security and persistence. How to collect the error log and performance log easily? perhaps on its way.
-## Install
-
-```bash
-npm install zhuque
-```
 
 ## Usage
 ```bash
@@ -13,7 +8,9 @@ npm run build
 npm run start
 ```
 And open http://127.0.0.1:1024/webpack-dev-server/index.html
+
 ![image](https://github.com/azl397985856/zhuque/raw/master/clip.png)
+
 ## In Progress
 1. security check
 2. dashboard and graph added
