@@ -1,0 +1,43 @@
+{
+  "extends": "eslint-config-airbnb",
+  "globals": {
+    // Put things like jQuery, etc
+    "jQuery": true,
+    "$": true
+  },
+  "env": {
+    // I write for browser
+    "browser": true,
+    // in CommonJS
+    "node": true
+  },
+  // To give you an idea how to override rule options:
+  "rules": {
+    // Tons of rules you can use, for example...
+    //"quotes": [1, "double"]
+    "indent": [2, "tab"],
+     //自定义如下常用配置，报错级别：【0，正常】、【1，警告】、【2，错误】，其中默认为2
+    "no-else-return": 0,                        //在else之前有return语句（在if中）
+    "no-console": 1,                            //有console.log打印信息
+    "no-unused-vars": 1,                        //定义未使用变量或函数
+    "comma-dangle": [0, 'always-multiline'],    //在函数或语句块末行没有逗号
+    "react/prop-types": 1,                      //引用本组件中未声明属性，如this.props.name
+    "eqeqeq": 1,                                //使用==，而不使用===
+    "prefer-const": 1,                          //从未被修改的变量被定义为let型，而不是const型
+    "eol-last": 1,                              //文件末行不是空行
+    "func-names": 1,                            //使用匿名函数
+    "new-cap": 1,                               //$.Diferred()，如果首字母是大写，必须是构造函数
+    // eslint
+    "object-shorthand": 1,
+    "no-param-reassign": [1, {"props": true}],
+    "prefer-arrow-callback": 1,
+    "prefer-template": 1,
+    "space-before-function-paren": 1,
+    "no-extend-native": 1,
+    "max-len": 0,
+    "react/prefer-es6-class": 1,
+    "react/jsx-indent-props": 1,
+    "react/jsx-no-bind": 1,
+    "object-curly-spacing": [1, "never"]
+  }
+}

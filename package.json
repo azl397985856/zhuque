@@ -1,0 +1,38 @@
+{
+  "name": "zhuque",
+  "version": "0.0.1",
+  "description": "dashboard to show error and performance log integrated with security and persistence.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rm -rf ./build & webpack --progress --colors",
+    "test": "babel-node babel test",
+    "start": "webpack-dev-server --port 1024 --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azl397985856/zhuque.git"
+  },
+  "keywords": [
+    "error",
+    "log"
+  ],
+  "author": "Zhipeng Lu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azl397985856/zhuque/issues"
+  },
+  "homepage": "https://github.com/azl397985856/zhuque#readme",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "jsx-loader": "^0.13.2",
+    "react-hot-loader": "^3.0.0-beta.5",
+    "style-loader": "^0.13.1"
+  }
+}
