@@ -11,10 +11,13 @@ And open http://127.0.0.1:1024/webpack-dev-server/index.html
 
 ![image](https://github.com/azl397985856/zhuque/raw/master/clip.png)
 
+the data stored in localhost/mydb/logs
+
 ## In Progress
 1. security check
 2. dashboard and graph added
-3. mongodb added
+3. more fileds
+4. performance log supported
 
 ## Contributing
 

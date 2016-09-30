@@ -1,6 +1,7 @@
 import { Form, Input, Row, Col, Button, DatePicker, Select } from 'antd';
 import ReactDOM from 'react-dom';
 import React, { Component, PropTypes } from 'react';
+
 const FormItem = Form.Item;
 const RangePicker = DatePicker.RangePicker;
 const Option = Select.Option;
@@ -19,21 +20,19 @@ class SearchForm extends Component {
     this.clearForm = this.clearForm.bind(this);
     this.search = this.search.bind(this);
     this.props.form.setFieldsValue({
-      type: 'all',
+      type: '',
     });
   }
   clearForm(e) {
-    e.preventDefault();
     this.props.form.setFieldsValue({
       projectName: '',
       userAgent: '',
-      type: 'all',
+      type: '',
       time: '',
     });
   }
   search(e) {
-    e.preventDefault();
-    console.log(this.props.form.getFieldsValue());
+   this.props.onSearch(this.props.form.getFieldsValue());
   }
   render() {
     const { setFieldsValue, getFieldValue, getFieldDecorator } = this.props.form;
@@ -48,7 +47,7 @@ class SearchForm extends Component {
         {
           getFieldDecorator('projectName')(
             <Input
-              placeholder="输入你所管理的项目名"
+              placeholder="支持模糊查询"
               size="default"
             />
           )
@@ -80,7 +79,7 @@ class SearchForm extends Component {
           <Select
             style={{ width: 120 }}
           >
-            <Option value="all">--全部--</Option>
+            <Option value="">--全部--</Option>
             <Option value="error">错误</Option>
             <Option value="performance">性能</Option>
           </Select>

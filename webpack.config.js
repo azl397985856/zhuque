@@ -4,7 +4,7 @@ module.exports = {
     entry: [
       'webpack-dev-server/client?http://127.0.0.1:1024', // WebpackDevServer host and port
       'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-      "./src/index.js"
+      "./src/dashboard.js"
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -18,6 +18,10 @@ module.exports = {
               loader: "style!css" 
             },
             {
+              test: /\.json$/,
+              loader: "json" 
+            },
+            {
               test: /\.js$|\.jsx$/,
               include: path.join(__dirname, 'src'),
               loaders: ['babel'],
@@ -26,5 +30,9 @@ module.exports = {
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
-    ]
+    ],
+    node: {
+      fs: "empty",
+      net: 'empty'
+    }
 };
