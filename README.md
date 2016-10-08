@@ -11,6 +11,9 @@ And open http://127.0.0.1:1024/webpack-dev-server/index.html
 
 ![image](https://github.com/azl397985856/zhuque/raw/master/clip.png)
 
+Dashboard
+![image](https://github.com/azl397985856/zhuque/raw/master/dashboard.png)
+
 the data stored in localhost/mydb/logs
 
 ## In Progress
