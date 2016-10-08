@@ -1,0 +1,122 @@
+.zq-dashboard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}
+.zq-dashboard-graph {
+    display: block;
+    margin: 300px 0 300px 0;
+    display: flex;
+    justify-content: center;
+}
+// 鼠标悬浮效果
+.item
+{
+    position: relative;
+
+    float: left;
+
+    margin: 5px;
+
+    text-align: center;
+}
+
+.item,
+.item-hover,
+.item-hover .mask,
+.item-img,
+.item-info
+{
+    width: 300px;
+    height: 225px;
+}
+
+.item-hover,
+.item-hover .mask,
+.item-img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item-type-line .item-hover
+{
+    z-index: 100;
+
+    display: block;
+
+    cursor: pointer;
+    -webkit-transition: all 300ms ease-out;
+       -moz-transition: all 300ms ease-out;
+         -o-transition: all 300ms ease-out;
+            transition: all 300ms ease-out;
+    text-align: center;
+    text-decoration: none;
+
+    opacity: 0;
+}
+
+.item-type-line .item-info
+{
+    position: relative;
+    z-index: 10;
+    z-index: 5;
+
+    display: table-cell;
+
+    vertical-align: middle;
+
+    color: #fff;
+}
+
+.item-type-line .item-info .headline
+{
+    font-size: 20px;
+}
+
+.item-type-line .item-info .line
+{
+    width: 0;
+    height: 1px;
+    margin: 15px auto;
+
+    -webkit-transition: all 500ms ease-out;
+       -moz-transition: all 500ms ease-out;
+         -o-transition: all 500ms ease-out;
+            transition: all 500ms ease-out;
+
+    background-color: #fff;
+}
+
+.item-type-line .item-info .date
+{
+    font-size: 12px;
+}
+
+.item-type-line .item-hover .mask
+{
+    z-index: 0;
+
+    opacity: .5;
+    background-color: #000;
+
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+        filter: alpha(opacity=50);
+}
+
+.item-type-line .item-hover:hover .line
+{
+    width: 40%;
+}
+
+.item-type-line .item-hover:hover
+{
+    opacity: 1;
+}
+
+.item-img
+{
+    z-index: 0;
+}

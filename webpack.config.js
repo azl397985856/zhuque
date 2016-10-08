@@ -4,15 +4,19 @@ module.exports = {
     entry: [
       'webpack-dev-server/client?http://127.0.0.1:1024', // WebpackDevServer host and port
       'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-      "./src/dashboard.js"
+      "./src/layout/appRouter.js"
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: "bundle.js",
-        publicPath: '/static/'
+        publicPath: '/build/'
     },
     module: {
         loaders: [
+            {
+              test: /\.less$/,
+              loader: "style!css!less" 
+            },
             {
               test: /\.css$/,
               loader: "style!css" 

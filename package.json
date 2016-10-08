@@ -33,6 +33,7 @@
     "morgan": "^1.7.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-router": "^2.8.1",
     "serve-favicon": "^2.3.0",
     "superagent": "^2.3.0"
   },
@@ -43,6 +44,7 @@
     "css-loader": "^0.25.0",
     "json-loader": "^0.5.4",
     "jsx-loader": "^0.13.2",
+    "less-loader": "^2.2.3",
     "react-hot-loader": "^3.0.0-beta.5",
     "style-loader": "^0.13.1",
     "webpack-dev-server": "^1.16.1"

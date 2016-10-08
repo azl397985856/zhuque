@@ -14,10 +14,10 @@ And open http://127.0.0.1:1024/webpack-dev-server/index.html
 the data stored in localhost/mydb/logs
 
 ## In Progress
-1. security check
-2. dashboard and graph added
-3. more fileds
-4. performance log supported
+1. security check(appkey, appid)
+2. graph added(d3)
+3. performance log supported
+4. fuzzy search(projectName and userAgent)
 
 ## Contributing
 

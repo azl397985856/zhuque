@@ -20,7 +20,7 @@ class SearchForm extends Component {
     this.clearForm = this.clearForm.bind(this);
     this.search = this.search.bind(this);
     this.props.form.setFieldsValue({
-      type: '',
+      type: window.localStorage.type || '',
     });
   }
   clearForm(e) {
@@ -29,6 +29,7 @@ class SearchForm extends Component {
       userAgent: '',
       type: '',
       time: '',
+      userId: '',
     });
   }
   search(e) {
@@ -47,7 +48,7 @@ class SearchForm extends Component {
         {
           getFieldDecorator('projectName')(
             <Input
-              placeholder="支持模糊查询"
+              placeholder="暂不支持模糊查询"
               size="default"
             />
           )
@@ -61,7 +62,7 @@ class SearchForm extends Component {
         {
           getFieldDecorator('userAgent')(
           <Input
-            placeholder="支持模糊查询"
+            placeholder="暂不支持模糊查询"
             size="default"
           />
           )
@@ -101,7 +102,22 @@ class SearchForm extends Component {
         }
         </FormItem>
       </Col>
-
+      <Col sm={8}>
+        <FormItem
+          label="用户ID"
+          labelCol={{ span: 10 }}
+          wrapperCol={{ span: 14 }}
+        >
+       {
+          getFieldDecorator('userId')(
+          <Input
+            placeholder="输入用户ID"
+            size="default"
+          />
+          )
+        }
+        </FormItem>
+      </Col>
     </Row>
     <Row>
       <Col span={12} offset={12} style={{ textAlign: 'right' }}>

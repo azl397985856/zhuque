@@ -11,7 +11,9 @@ class Grid extends Component {
     	logs: []
     }
     this.search = this.search.bind(this);
-   	this.search({});
+   	this.search({
+   		type: window.localStorage.type
+   	});
   }
   search(searchTerm) {
   	 fetch('http://localhost:1333/search', {

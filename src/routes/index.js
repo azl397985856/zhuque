@@ -48,9 +48,6 @@ router.all('/log', function (req, res) {
   logs.find(req.body).then(
     function(q) {
       if (start) {
-        console.log(q.filter(function(row) {
-          return row.time < start && row.time > end;
-        }));
         res.send(q.filter(function(row) {
           return row.time >= start && row.time <= end;
         }));
@@ -58,6 +55,28 @@ router.all('/log', function (req, res) {
         res.send(q);
       }
     });
+})
+.all('/dashboard', function (req, res) {
+  // 1.security check, if passed, then insert record
+  // 2.get count from db
+  var errorCount;
+  var perfCount;
+  logs.count({
+    type: 'error'
+  }).then(function(count) {
+    errorCount = count;
+  }).then(function() {
+     logs.count({
+      type: 'performance'
+    }).then(function(count) {
+      perfCount = count;
+    }).then(function() {
+      res.send({
+      errorCount: errorCount,
+      perfCount: perfCount
+    });
+    });
+  });
 })
 .all('*', function (req, res) {
   console.log(req.path, req.method);
