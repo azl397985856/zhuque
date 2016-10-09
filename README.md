@@ -8,6 +8,7 @@ npm run build
 npm run start
 ```
 And open http://127.0.0.1:1024/webpack-dev-server/index.html
+before getting started, you should visit /login with {name: 'lzp', password: 'lzp'}, try /logout to logout. cause I'm prepared for logging with 3rd party login server. if you'r intersted with it, follow my account for the latest news
 
 ![image](https://github.com/azl397985856/zhuque/raw/master/clip.png)
 
