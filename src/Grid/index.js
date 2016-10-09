@@ -21,6 +21,7 @@ class Grid extends Component {
 	    	headers: {
 				'Content-Type': 'application/json',
 			},
+      credentials: 'include',
 			body: JSON.stringify(searchTerm),
 	    })
 		.then(function(response) {
@@ -29,6 +30,14 @@ class Grid extends Component {
 	        }
 	        return response.json();
 	    })
+    .then(result => {
+       if (result.error === '请重新登录') {
+        // 重定向到首页进行统一的错误处理
+        window.location.href = 'http://localhost:1024/webpack-dev-server/index.html'
+       } else {
+        return result;
+       }
+      })
 	    .then(logs => this.setState({logs,})
 	);
   }

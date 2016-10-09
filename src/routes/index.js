@@ -3,15 +3,7 @@ var express = require('express');
 var router = express.Router();
 const db = require('monk')('localhost/mydb')
 const logs = db.get('zhuque_logs')
-
-// for cors
-router.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", req.headers.origin);  
-  res.header("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, Accept, Origin"); 
-  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-  res.header("Access-Control-Allow-Credentials", false);  
-  next();
-});
+const users = db.get('zhuque_users')
 
 router.all('/log', function (req, res) {
   // 1.security check, if passed, then insert record
@@ -21,13 +13,17 @@ router.all('/log', function (req, res) {
   // 4.response
   res.send(req.body);
 })
-.get('/getAll', function (req, res) {
-  // getAll just for test
-  logs.find({}).then(function(q) {res.send(q)});
+.all('/logout', function(req, res) {
+  res.clearCookie('token');
+  res.json({
+    message: '注销成功！'
+  });
 })
 .post('/search', function (req, res) {
-  // 1.security check, if passed, then insert record
+  // 1.security check
+  // 假如第三方登录平台给我返回的userId = 1089288
   // 2.key field check
+  console.log(req.body);
   if (req.body.type === '') {
     delete req.body.type;
   }
@@ -37,6 +33,9 @@ router.all('/log', function (req, res) {
   if (req.body.time === '') {
     delete req.body.time;
   }
+  if (req.body.userId === '') {
+    delete req.body.userId;
+  }
   var start;
   var end;
   if (req.body.time) {
@@ -44,7 +43,8 @@ router.all('/log', function (req, res) {
     end = req.body.time[1];
     delete req.body.time;
   }
-  // 3.get querys and find by query
+  req.body.userId = '1089288' // 假如第三方登录平台给我返回的userId = 1089288
+  // 3.find by query
   logs.find(req.body).then(
     function(q) {
       if (start) {
@@ -57,17 +57,19 @@ router.all('/log', function (req, res) {
     });
 })
 .all('/dashboard', function (req, res) {
-  // 1.security check, if passed, then insert record
+  // 1.security check
   // 2.get count from db
   var errorCount;
   var perfCount;
   logs.count({
-    type: 'error'
+    type: 'error',
+    userId: '1089288' // 假如第三方登录平台给我返回的userId = 1089288
   }).then(function(count) {
     errorCount = count;
   }).then(function() {
      logs.count({
-      type: 'performance'
+      type: 'performance',
+      userId: '1089288' // 假如第三方登录平台给我返回的userId = 1089288
     }).then(function(count) {
       perfCount = count;
     }).then(function() {
