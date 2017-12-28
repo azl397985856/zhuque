@@ -1,7 +1,10 @@
 ## Introduction
-Dashboard to show error and performance log integrated with security and persistence. How to collect the error log and performance log easily? perhaps on its way.
+Dashboard to show error and performance log integrated with security and persistence. There will be four **MIT** to do,
+collect, store，process and alarm. so what I do is store and process, the alarm is under consideration. and if you want
+to collect data from the clients, try using the zhuque-client.
 
 ## Usage
+
 ```bash
 npm install
 npm run build
