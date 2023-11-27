@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/azl397985856/zhuque#readme",
   "dependencies": {
-    "antd": "^2.0.0",
+    "antd": "^4.0.0",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
