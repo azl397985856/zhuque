@@ -28,7 +28,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "express-session": "^1.14.1",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "monk": "^3.1.2",
     "morgan": "^1.7.0",
     "react": "^15.3.2",
